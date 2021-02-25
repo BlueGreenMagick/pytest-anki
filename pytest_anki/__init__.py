@@ -278,7 +278,7 @@ def anki_running(
     locale.setlocale(locale.LC_ALL, locale.getdefaultlocale())
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def anki_session(request) -> Iterator[AnkiSession]:
     """Fixture that instantiates Anki, yielding an AnkiSession object
     
